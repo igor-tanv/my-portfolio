@@ -20,27 +20,21 @@ export default function Home() {
     { name: "Symfony", logo: "/logos/symfony.svg" },
   ];
 
+  
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
       {/* Hero Section */}
-      <section
-        id="hero"
-        className="flex flex-col items-center justify-center text-center bg-gradient-to-b from-gray-800 to-gray-900 text-white min-h-screen"
-      >
-        <h1 className="text-5xl font-extrabold mb-4">
-          Hi, I'm <span className="text-blue-500">Igor</span>
-        </h1>
-        <p className="text-lg max-w-3xl">
-          Full Stack software engineer specializing in building beautiful,
-          functional websites and applications.
-        </p>
-        <a
-          href="#about"
-          className="mt-6 px-6 py-3 rounded-full bg-blue-500 hover:bg-blue-600 text-white text-lg"
-        >
-          Learn More
-        </a>
-      </section>
+      <section id="hero" className="hero">
+  <div>
+    <h1 className="text-6xl font-bold">
+      Hi, I'm <span className="text-yellow-300">Igor</span>.
+    </h1>
+    <p className="text-lg mt-4">
+      Full Stack Software Engineer crafting seamless digital experiences.
+    </p>
+    <button className="hero-button">Learn More</button>
+  </div>
+</section>
 
       {/* My Stack Section */}
       <section
@@ -48,7 +42,7 @@ export default function Home() {
         className="py-20 bg-gradient-to-r from-blue-50 to-gray-100 text-gray-800 text-center sm:text-left"
       >
         <div className="container mx-auto px-6 lg:px-20">
-          <h1 className="text-4xl font-extrabold text-gray-800 mb-8">
+          <h1 className="text-4xl font-extrabold text-gray-800 mb-8 text-center">
             Technologies I Use
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
@@ -102,6 +96,60 @@ export default function Home() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-20 bg-gray-50 text-center">
+        <div className="container mx-auto px-6 lg:px-20">
+          <h2 className="text-4xl font-bold text-gray-800 mb-8">Projects</h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {/* Project 1 */}
+            <div className="bg-white shadow-md rounded-md p-6">
+              <h3 className="text-xl font-semibold mb-2">Project 1</h3>
+              <p className="text-gray-600 mb-4">
+                A brief description of your project and its key features.
+              </p>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                View Project
+              </a>
+            </div>
+            {/* Project 2 */}
+            <div className="bg-white shadow-md rounded-md p-6">
+              <h3 className="text-xl font-semibold mb-2">Project 2</h3>
+              <p className="text-gray-600 mb-4">
+                A brief description of your project and its key features.
+              </p>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                View Project
+              </a>
+            </div>
+            {/* Project 3 */}
+            <div className="bg-white shadow-md rounded-md p-6">
+              <h3 className="text-xl font-semibold mb-2">Project 3</h3>
+              <p className="text-gray-600 mb-4">
+                A brief description of your project and its key features.
+              </p>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                View Project
+              </a>
             </div>
           </div>
         </div>
