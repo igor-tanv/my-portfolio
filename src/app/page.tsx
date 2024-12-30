@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Hero from "./hero"
 
 export default function Home() {
   const frontendTechnologies = [
@@ -20,22 +21,10 @@ export default function Home() {
     { name: "Symfony", logo: "/logos/symfony.svg" },
   ];
 
-  
+
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
-      {/* Hero Section */}
-      <section id="hero" className="hero">
-  <div>
-    <h1 className="text-6xl font-bold">
-      Hi, I'm <span className="text-yellow-300">Igor</span>.
-    </h1>
-    <p className="text-lg mt-4">
-      Full Stack Software Engineer crafting seamless digital experiences.
-    </p>
-    <button className="hero-button">Learn More</button>
-  </div>
-</section>
-
+      {<Hero/>}
       {/* My Stack Section */}
       <section
         id="about"
