@@ -20,60 +20,48 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Hero Section Styles */
+/* Hero Section */
 #hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-height: 100vh;
-  background: radial-gradient(circle, #0a0a0a, #151515, #1e1e2f);
-  overflow: hidden;
-  color: white;
   position: relative;
+  height: 100vh;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
 }
 
-/* Bubble Container */
-.bubbles {
-  position: absolute;
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Navbar */
+nav {
+  position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-  overflow: hidden;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
 }
 
-/* Individual Bubble */
-.bubble {
-  position: absolute;
-  bottom: -10%;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  animation: floatBubble linear infinite;
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-/* Animation for Bubble Movement */
-@keyframes floatBubble {
-  0% {
-    transform: translateX(0) translateY(0);
-    opacity: 0.8;
-  }
-  25% {
-    transform: translateX(var(--driftX)) translateY(-20%);
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(calc(var(--driftX) * -1)) translateY(-50%);
-    opacity: 0.6;
-  }
-  75% {
-    transform: translateX(calc(var(--driftX) * 0.5)) translateY(-80%);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateX(0) translateY(-100%);
-    opacity: 0;
-  }
+nav a:hover {
+  color: #00bcd4;
 }
