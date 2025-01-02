@@ -1,7 +1,30 @@
 import Image from "next/image";
-import Head from "next/head";
+import Projects from "./projects";
+import TechStack from "./techStack";
+import Navbar from "./navbar";
 
 export default function Home() {
+
+
+// src/data/projectsData.ts
+const projects = [
+  {
+    title: "Project One",
+    description: "A full-stack application that demonstrates...",
+    link: "#",
+  },
+  {
+    title: "Project Two",
+    description: "An AWS-powered microservices architecture...",
+    link: "#",
+  },
+  {
+    title: "Project Three",
+    description: "An e-commerce platform built with...",
+    link: "#",
+  },
+];
+
   const technologies = [
     { name: "React", logo: "/logos/react.svg" },
     { name: "Node.js", logo: "/logos/nodejs.svg" },
@@ -13,27 +36,8 @@ export default function Home() {
     { name: "Symfony", logo: "/logos/symfony.svg" },
   ];
 
-  const projects = [
-    {
-      title: "Project One",
-      description: "A full-stack application that demonstrates...",
-      link: "#",
-    },
-    {
-      title: "Project Two",
-      description: "An AWS-powered microservices architecture...",
-      link: "#",
-    },
-    {
-      title: "Project Three",
-      description: "An e-commerce platform built with...",
-      link: "#",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-gray-900 text-gray-300 font-sans">
-      <Head />
 
       {/* Hero Section */}
       <section id="hero" className="bg-gray-800 py-20 text-center relative">
@@ -51,23 +55,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Navbar */}
-      <nav className="bg-gray-900 py-4">
-        <div className="container mx-auto px-6 flex justify-center space-x-8">
-          <a href="#hero" className="text-gray-300 hover:text-cyan-400 transition">
-            Home
-          </a>
-          <a href="#about" className="text-gray-300 hover:text-cyan-400 transition">
-            About
-          </a>
-          <a href="#technologies" className="text-gray-300 hover:text-cyan-400 transition">
-            Tech Stack
-          </a>
-          <a href="#projects" className="text-gray-300 hover:text-cyan-400 transition">
-            Projects
-          </a>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* About Section */}
       <section id="about" className="py-20 bg-gray-900">
@@ -81,61 +69,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Technologies Section */}
-      <section id="technologies" className="py-20 bg-gray-800">
-        <div className="container mx-auto px-6 lg:px-20">
-          <h2 className="text-4xl font-bold text-white text-center mb-8">
-            Tech Stack
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
-            {technologies.map((tech) => (
-              <div
-                key={tech.name}
-                className="flex flex-col items-center shadow-lg bg-gray-700 rounded-lg p-4 transition-transform hover:scale-105"
-              >
-                <Image
-                  src={tech.logo}
-                  alt={tech.name}
-                  width={80}
-                  height={80}
-                  className="rounded-md"
-                />
-                <p className="mt-3 font-medium text-gray-200">{tech.name}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TechStack technologies={technologies}/>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-900">
-        <div className="container mx-auto px-6 lg:px-20">
-          <h2 className="text-4xl font-bold text-white text-center mb-8">
-            Projects
-          </h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
-              <div
-                key={project.title}
-                className="bg-gray-800 shadow-lg rounded-lg p-6 transition-transform hover:scale-105"
-              >
-                <h3 className="text-2xl font-semibold text-white mb-4">
-                  {project.title}
-                </h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 hover:underline"
-                >
-                  View Project
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Projects projects={projects} />
 
       {/* Footer */}
       <footer className="bg-gray-800 py-6 text-center">

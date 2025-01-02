@@ -54,6 +54,11 @@ nav {
   padding: 0.5rem 0;
 }
 
+section {
+  scroll-margin-top: 4rem; /* Adjust based on Navbar height */
+}
+
+
 nav a {
   color: white;
   margin: 0 1rem;
