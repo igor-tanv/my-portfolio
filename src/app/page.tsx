@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Projects from "./projects";
 import TechStack from "./techStack";
 import Navbar from "./navbar";
@@ -36,15 +35,16 @@ export default function Home() {
   
 
   const technologies = [
-    { name: "React", logo: "/logos/react.svg" },
-    { name: "Node.js", logo: "/logos/nodejs.svg" },
-    { name: "AWS", logo: "/logos/aws.svg" },
-    { name: "Docker", logo: "/logos/docker.svg" },
-    { name: "PostgreSQL", logo: "/logos/postgresql.svg" },
-    { name: "MongoDB", logo: "/logos/mongodb.svg" },
-    { name: "TypeScript", logo: "/logos/typescript.png" },
-    { name: "Symfony", logo: "/logos/symfony.svg" },
+    { name: "React", url: "https://reactjs.org/", logo: "/images/technologies/react.png" },
+    { name: "Node.js", url: "https://nodejs.org/", logo: "/logos/nodejs.svg" },
+    { name: "AWS", url: "https://aws.amazon.com/", logo: "/logos/aws.svg" },
+    { name: "Docker", url: "https://www.docker.com/", logo: "/logos/docker.svg" },
+    { name: "PostgreSQL", url: "https://www.postgresql.org/", logo: "/logos/postgresql.svg" },
+    { name: "MongoDB", url: "https://www.mongodb.com/", logo: "/logos/mongodb.svg" },
+    { name: "TypeScript", url: "https://www.typescriptlang.org/", logo: "/logos/typescript.png" },
+    { name: "Symfony", url: "https://symfony.com/", logo: "/logos/symfony.svg" },
   ];
+  
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-300 font-sans">
