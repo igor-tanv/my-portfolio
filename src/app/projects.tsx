@@ -1,10 +1,10 @@
-
 import React from "react";
 
 interface Project {
   title: string;
   description: string;
   link: string;
+  image: string; // Added the image property
 }
 
 interface ProjectsProps {
@@ -24,18 +24,25 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
               key={project.title}
               className="bg-gray-800 shadow-lg rounded-lg p-6 transition-transform hover:scale-105"
             >
+              {/* Make the image clickable */}
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={project.image}
+                  alt={`Screenshot of ${project.title}`}
+                  className="w-full h-40 object-cover rounded-md mb-4"
+                />
+              </a>
+
+              {/* Render the project title */}
               <h3 className="text-2xl font-semibold text-white mb-4">
                 {project.title}
               </h3>
+
+              {/* Render the project description */}
               <p className="text-gray-400 mb-4">{project.description}</p>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 hover:underline"
-              >
-                View Project
-              </a>
+
+              {/* Render the project link */}
+             
             </div>
           ))}
         </div>
@@ -44,6 +51,4 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   );
 };
 
-  
-
-export default Projects
+export default Projects;

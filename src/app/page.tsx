@@ -6,24 +6,34 @@ import Navbar from "./navbar";
 export default function Home() {
 
 
-// src/data/projectsData.ts
-const projects = [
-  {
-    title: "Project One",
-    description: "A full-stack application that demonstrates...",
-    link: "#",
-  },
-  {
-    title: "Project Two",
-    description: "An AWS-powered microservices architecture...",
-    link: "#",
-  },
-  {
-    title: "Project Three",
-    description: "An e-commerce platform built with...",
-    link: "#",
-  },
-];
+  const projects = [
+    {
+      title: "MCN Solutions",
+      description: "A global IT services company specializing in software development, cloud computing, and digital transformation solutions.",
+      link: "https://www.mcnsolutions.com/",
+      image: "/images/projects/mcnsolutions.png", 
+    },
+    {
+      title: "Simpleshowing",
+      description: "A modern real estate platform offering tools to browse listings, schedule showings, and save on commissions with a streamlined process.",
+      link: "https://www.simpleshowing.com/",
+      image: "/images/projects/simpleshowing.png", 
+    },
+    {
+      title: "Reclub",
+      description: "A platform enabling fractional ownership of real estate investments, providing accessible opportunities to build wealth collaboratively.",
+      link: "https://reclub.co/",
+      image: "/images/projects/reclub.png", 
+    },
+    {
+      title: "Matterhorn Digital",
+      description: "A New Zealand-based digital agency specializing in web design, development, and digital marketing solutions for businesses.",
+      link: "https://matterhorndigital.nz/",
+      image: "/images/projects/matterhorn.png",
+    },
+  ];
+  
+  
 
   const technologies = [
     { name: "React", logo: "/logos/react.svg" },
