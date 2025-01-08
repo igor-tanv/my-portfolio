@@ -1,0 +1,43 @@
+[
+    {
+      "name": "React",
+      "url": "https://reactjs.org/",
+      "logo": "/images/technologies/react.png"
+    },
+    {
+      "name": "Node.js",
+      "url": "https://nodejs.org/",
+      "logo": "/logos/nodejs.svg"
+    },
+    {
+      "name": "AWS",
+      "url": "https://aws.amazon.com/",
+      "logo": "/logos/aws.svg"
+    },
+    {
+      "name": "Docker",
+      "url": "https://www.docker.com/",
+      "logo": "/logos/docker.svg"
+    },
+    {
+      "name": "PostgreSQL",
+      "url": "https://www.postgresql.org/",
+      "logo": "/logos/postgresql.svg"
+    },
+    {
+      "name": "MongoDB",
+      "url": "https://www.mongodb.com/",
+      "logo": "/logos/mongodb.svg"
+    },
+    {
+      "name": "TypeScript",
+      "url": "https://www.typescriptlang.org/",
+      "logo": "/logos/typescript.png"
+    },
+    {
+      "name": "Symfony",
+      "url": "https://symfony.com/",
+      "logo": "/logos/symfony.svg"
+    }
+  ]
+  

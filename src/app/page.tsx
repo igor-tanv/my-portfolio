@@ -2,49 +2,11 @@ import Projects from "./projects";
 import TechStack from "./techStack";
 import Navbar from "./navbar";
 
+import projects from "../data/projects.json";
+import technologies from "../data/technologies.json";
+
 export default function Home() {
 
-
-  const projects = [
-    {
-      title: "MCN Solutions",
-      description: "A global IT services company specializing in software development, cloud computing, and digital transformation solutions.",
-      link: "https://www.mcnsolutions.com/",
-      image: "/images/projects/mcnsolutions.png", 
-    },
-    {
-      title: "Simpleshowing",
-      description: "A modern real estate platform offering tools to browse listings, schedule showings, and save on commissions with a streamlined process.",
-      link: "https://www.simpleshowing.com/",
-      image: "/images/projects/simpleshowing.png", 
-    },
-    {
-      title: "Reclub",
-      description: "A platform enabling fractional ownership of real estate investments, providing accessible opportunities to build wealth collaboratively.",
-      link: "https://reclub.co/",
-      image: "/images/projects/reclub.png", 
-    },
-    {
-      title: "Matterhorn Digital",
-      description: "A New Zealand-based digital agency specializing in web design, development, and digital marketing solutions for businesses.",
-      link: "https://matterhorndigital.nz/",
-      image: "/images/projects/matterhorn.png",
-    },
-  ];
-  
-  
-
-  const technologies = [
-    { name: "React", url: "https://reactjs.org/", logo: "/images/technologies/react.png" },
-    { name: "Node.js", url: "https://nodejs.org/", logo: "/logos/nodejs.svg" },
-    { name: "AWS", url: "https://aws.amazon.com/", logo: "/logos/aws.svg" },
-    { name: "Docker", url: "https://www.docker.com/", logo: "/logos/docker.svg" },
-    { name: "PostgreSQL", url: "https://www.postgresql.org/", logo: "/logos/postgresql.svg" },
-    { name: "MongoDB", url: "https://www.mongodb.com/", logo: "/logos/mongodb.svg" },
-    { name: "TypeScript", url: "https://www.typescriptlang.org/", logo: "/logos/typescript.png" },
-    { name: "Symfony", url: "https://symfony.com/", logo: "/logos/symfony.svg" },
-  ];
-  
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-300 font-sans">
