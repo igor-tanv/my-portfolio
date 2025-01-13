@@ -1,6 +1,8 @@
-import Projects from "./projects";
-import TechStack from "./techStack";
-import Navbar from "./navbar";
+import Projects from "./components/projects";
+import TechStack from "./components/techStack";
+import Navbar from "./components/navbar";
+import Hero from "./components/hero";
+import About from "./components/about";
 
 import projects from "../data/projects.json";
 import technologies from "../data/technologies.json";
@@ -11,35 +13,11 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-300 font-sans">
 
-      {/* Hero Section */}
-      <section id="hero" className="bg-gray-800 py-20 text-center relative">
-        <div className="container mx-auto px-6 relative z-10">
-          <h1 className="text-5xl font-bold text-white">Igor Tatarinov</h1>
-          <p className="text-xl mt-4 text-gray-400">
-            Full-Stack Software Engineer specializing in scalable solutions.
-          </p>
-          <a
-            href="#projects"
-            className="inline-block mt-6 px-8 py-3 text-gray-900 bg-cyan-400 rounded hover:bg-cyan-300 transition"
-          >
-            View My Work
-          </a>
-        </div>
-      </section>
-
       <Navbar />
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-gray-900">
-        <div className="container mx-auto px-6 lg:px-20">
-          <h2 className="text-4xl font-bold text-white text-center mb-8">About Me</h2>
-          <p className="text-lg text-gray-400 text-center leading-relaxed">
-            I am a passionate software engineer with a deep understanding of modern
-            development practices, specializing in cloud-native applications and
-            scalable systems. I enjoy building solutions that make an impact.
-          </p>
-        </div>
-      </section>
+      <Hero />
+
+     <About/>
 
       <TechStack technologies={technologies}/>
 

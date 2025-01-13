@@ -35,6 +35,7 @@ body {
   color: white;
 }
 
+
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -65,3 +66,22 @@ nav a {
 nav a:hover {
   color: #00bcd4;
 }
+
+/* About Section */
+#about {
+  background-color: #f7f7f7;
+  padding: 100px 20px;
+}
+
+#about h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+#about p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8;
+}
+
