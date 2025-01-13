@@ -17,7 +17,7 @@ const Hero = () => {
         animate ? 'fade-in-zoom' : ''
       }`}
       style={{
-        backgroundImage: "url('/hero.jpg')",
+        backgroundImage: "url('/hero-background.jpg')",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',

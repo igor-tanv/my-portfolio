@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color Variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -14,10 +15,12 @@
   }
 }
 
+/* Global Styles */
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth; 
 }
 
 /* Hero Section */
@@ -25,21 +28,16 @@ body {
   position: relative;
   height: 100vh;
   background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
-}
-
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  animation: none !important; 
 }
 
 /* Navbar */
@@ -70,23 +68,19 @@ nav a:hover {
 /* About Section */
 #about {
   background-color: #f7f7f7;
-  padding: 100px 20px;
+  padding: 80px 20px;
 }
 
 #about h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #333;
 }
 
 #about p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #555;
-  line-height: 1.8;
-}
-
-html {
-  scroll-behavior: smooth;
+  line-height: 1.6;
 }
 
 @keyframes fadeInZoom {
@@ -103,8 +97,3 @@ html {
 .fade-in-zoom {
   animation: fadeInZoom 2s ease-out forwards;
 }
-
-
-
-
-

@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Igor Tatarinov | Fullstack Developer",
   description: "Professional Portfolio",
+  icons: {
+    icon: '/me.jpg',
+  },
 };
 
 export default function RootLayout({
