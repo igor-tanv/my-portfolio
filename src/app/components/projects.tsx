@@ -1,10 +1,12 @@
-import React from "react";
+'use client';
+
+import Image from 'next/image';
 
 interface Project {
   title: string;
   description: string;
+  image: string;
   link: string;
-  image: string; // Added the image property
 }
 
 interface ProjectsProps {
@@ -13,37 +15,32 @@ interface ProjectsProps {
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
-    <section id="projects" className="py-20 bg-gray-900">
-      <div className="container mx-auto px-6 lg:px-20">
-        <h2 className="text-4xl font-bold text-white text-center mb-8">
-          Projects
-        </h2>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <div
-              key={project.title}
-              className="bg-gray-800 shadow-lg rounded-lg p-6 transition-transform hover:scale-105"
+    <section id="projects" className="py-16 bg-gray-900 text-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-4xl font-bold text-center mb-12">Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <a
+              key={index}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105"
             >
-              {/* Make the image clickable */}
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
-                <img
+              <div className="relative h-48">
+                <Image
                   src={project.image}
-                  alt={`Screenshot of ${project.title}`}
-                  className="w-full h-40 object-cover rounded-md mb-4"
+                  alt={project.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="group-hover:opacity-80 transition-opacity"
                 />
-              </a>
-
-              {/* Render the project title */}
-              <h3 className="text-2xl font-semibold text-white mb-4">
-                {project.title}
-              </h3>
-
-              {/* Render the project description */}
-              <p className="text-gray-400 mb-4">{project.description}</p>
-
-              {/* Render the project link */}
-             
-            </div>
+              </div>
+              <div className="p-4 bg-gray-800">
+                <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-gray-400">{project.description}</p>
+              </div>
+            </a>
           ))}
         </div>
       </div>

@@ -85,3 +85,8 @@ nav a:hover {
   line-height: 1.8;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+

@@ -5,7 +5,9 @@ import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
+  // Detect scroll for background change
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -13,6 +15,17 @@ const Navbar = () => {
       } else {
         setScrolled(false);
       }
+
+      // Active section tracking
+      const sections = ['hero', 'about', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 150;
+
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        if (element && element.offsetTop <= scrollPosition) {
+          setActiveSection(section);
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -39,8 +52,14 @@ const Navbar = () => {
             <Link
               key={section}
               href={`#${section}`}
-              className={`hover:text-blue-500 transition-colors ${
-                scrolled ? 'text-gray-900' : 'text-white'
+              className={`transition-colors font-medium ${
+                scrolled
+                  ? activeSection === section
+                    ? 'text-blue-600'
+                    : 'text-gray-900 hover:text-blue-500'
+                  : activeSection === section
+                  ? 'text-blue-300'
+                  : 'text-white hover:text-blue-300'
               }`}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
