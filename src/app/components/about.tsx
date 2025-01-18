@@ -11,7 +11,7 @@ const About = () => {
           About Me
         </h2>
         <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-          I'm Igor Tatarinov, a full-stack software engineer with expertise in
+          I&#39;m Igor Tatarinov, a full-stack software engineer with expertise in
           Node.js, AWS, TypeScript, React, Symfony, PHP, and Docker. My passion
           lies in solving complex problems and building scalable, user-friendly
           applications.
