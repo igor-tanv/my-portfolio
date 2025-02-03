@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -20,9 +21,24 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    // Placeholder for form handling logic (e.g., API call or email service)
-    console.log(formData); // For now, log the captured data
+
+    const serviceID = process.env.SERVICE_ID;
+    const templateID = process.env.TEMPLATE_ID;
+    const publicKey = process.env.PUBLIC_KEY;
+
+    if (serviceID && templateID && publicKey) {
+      emailjs.send(serviceID, templateID, formData, publicKey)
+        .then((response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          setSubmitted(true);
+        })
+        .catch((error) => {
+          console.error('FAILED...', error);
+          alert('Oops! Something went wrong. Please try again later.');
+        });
+    } else {
+      console.error('Missing EmailJS environment variables.');
+    }
   };
 
   return (
