@@ -4,11 +4,25 @@ import { useState } from 'react';
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
     // Placeholder for form handling logic (e.g., API call or email service)
+    console.log(formData); // For now, log the captured data
   };
 
   return (
@@ -23,18 +37,27 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <input
               type="text"
+              name="name"
               placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
               required
               className="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <input
               type="email"
+              name="email"
               placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
               required
               className="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <textarea
+              name="message"
               placeholder="Your Message"
+              value={formData.message}
+              onChange={handleChange}
               required
               rows={5}
               className="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"

@@ -12,13 +12,13 @@ const About = () => {
         </h2>
         <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
           I&#39;m Igor Tatarinov, a full-stack software engineer with expertise in
-          Node.js, AWS, TypeScript, React, Symfony, PHP, and Docker. My passion
+          Node.js, AWS, TypeScript, React, Symfony, PHP and Docker. My passion
           lies in solving complex problems and building scalable, user-friendly
           applications.
         </p>
         <p className="text-lg md:text-xl text-gray-600 leading-relaxed mt-4">
-          Outside of coding, I enjoy grappling workouts, exploring the outdoors,
-          and diving into books about technology and global issues.
+          Outside of coding, I enjoy grappling, striking, exploring the outdoors
+          and diving into books about history and global issues.
         </p>
       </div>
     </section>
