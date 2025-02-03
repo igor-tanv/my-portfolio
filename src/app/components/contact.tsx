@@ -5,6 +5,7 @@ import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,11 +22,12 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
 
     const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
     const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_API_KEY;
-    
+
     if (serviceID && templateID && publicKey) {
       emailjs.send(serviceID, templateID, formData, publicKey)
         .then((response) => {
@@ -36,9 +38,13 @@ const Contact = () => {
         .catch((error) => {
           console.error('FAILED...', error);
           alert('Oops! Something went wrong. Please try again later.');
+        })
+        .finally(() => {
+          setIsLoading(false);
         });
     } else {
       console.error('Missing EmailJS environment variables.');
+      setIsLoading(false);
     }
   };
 
@@ -81,9 +87,10 @@ const Contact = () => {
             ></textarea>
             <button
               type="submit"
-              className="w-full py-3 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition duration-300"
+              disabled={isLoading}
+              className={`w-full py-3 text-white font-semibold rounded-md transition duration-300 ${isLoading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600'}`}
             >
-              Send Message
+              {isLoading ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         ) : (
