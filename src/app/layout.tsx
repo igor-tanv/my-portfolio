@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Igor Tatarinov | Fullstack Developer",
   description: "Professional Portfolio",
   icons: {
-    icon: '/me.jpg',
+    icon: '/profile_photo.jpg',
   },
 };
 
