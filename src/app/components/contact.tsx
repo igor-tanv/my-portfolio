@@ -22,15 +22,16 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const serviceID = process.env.SERVICE_ID;
-    const templateID = process.env.TEMPLATE_ID;
-    const publicKey = process.env.PUBLIC_KEY;
-
+    const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
+    const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_API_KEY;
+    
     if (serviceID && templateID && publicKey) {
       emailjs.send(serviceID, templateID, formData, publicKey)
         .then((response) => {
           console.log('SUCCESS!', response.status, response.text);
           setSubmitted(true);
+          setFormData({ name: '', email: '', message: '' }); // Reset form after submission
         })
         .catch((error) => {
           console.error('FAILED...', error);
