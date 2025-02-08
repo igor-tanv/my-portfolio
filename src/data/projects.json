@@ -22,6 +22,18 @@
       "description": "A New Zealand-based digital agency specializing in web design, development, and digital marketing solutions for businesses.",
       "link": "https://matterhorndigital.nz/",
       "image": "/images/projects/matterhorn.png"
+    },
+    {
+      "title": "VHG Global Spirits",
+      "description": "A premium spirits distributor offering a diverse range of high-quality alcoholic beverages globally.",
+      "link": "https://vhgglobalspirits.com/",
+      "image": "/images/projects/vhgglobalspirits.png"
+    },
+    {
+      "title": "Shamrock Spirits",
+      "description": "A leading importer and distributor of premium spirits, specializing in high-quality beverages for global markets.",
+      "link": "https://www.shamrock-spirits.com/",
+      "image": "/images/projects/shamrockspirits.png"
     }
   ]
   
